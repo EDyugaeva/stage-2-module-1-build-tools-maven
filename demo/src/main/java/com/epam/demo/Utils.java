@@ -8,7 +8,11 @@ public class Utils {
         boolean result = true;
         for (String s :
                 args) {
-            int n = Integer.parseInt(s);
+            if (s.isEmpty() || s.equals(" ")) {
+                return false;
+            }
+
+            float n = Float.parseFloat(s);
             if (n > 0) {
                 result = true;
             } else return false;
