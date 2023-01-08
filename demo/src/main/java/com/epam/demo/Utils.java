@@ -1,8 +1,10 @@
 package com.epam.demo;
 
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Utils {
@@ -15,7 +17,7 @@ public class Utils {
         for (String s :
                 args) {
             if (!NumberUtils.isCreatable(s)) {
-                continue;
+                return false;
             }
 
             float n = NumberUtils.createFloat(s);
@@ -26,5 +28,19 @@ public class Utils {
 
         //magic happens here
         return result;
+    }
+
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+
+        list.add("");
+        list.add(" ");
+//        list.add("-1");
+//        list.add("-1.5");
+        list.add("2");
+        list.add("5");
+        System.out.println(Utils.isAllPositiveNumbers(list));
+
+
     }
 }
