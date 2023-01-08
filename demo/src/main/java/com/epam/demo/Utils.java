@@ -12,7 +12,7 @@ public class Utils {
         boolean result = true;
         for (String s :
                 args) {
-            if (s.isEmpty() || s.equals(" ")) {
+            if (s.isEmpty() || s.equals(" ") || s == null) {
                 continue;
             }
 
