@@ -1,13 +1,15 @@
 package com.epam.utils;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
         //code!
-        if (str.isEmpty() || str.equals(" ")||str == null) {
+        if (!NumberUtils.isCreatable(str)) {
             return false;
         }
 
-        float n = Float.parseFloat(str);
+        float n = NumberUtils.createFloat(str);
         if (n > 0) {
             return true;
         }

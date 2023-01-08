@@ -1,6 +1,8 @@
 package com.epam.demo;
 
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import java.util.List;
 
 public class Utils {
@@ -12,11 +14,11 @@ public class Utils {
         boolean result = true;
         for (String s :
                 args) {
-            if (s.isEmpty() || s.equals(" ") || s == null) {
+            if (!NumberUtils.isCreatable(s)) {
                 continue;
             }
 
-            float n = Float.parseFloat(s);
+            float n = NumberUtils.createFloat(s);
             if (n > 0) {
                 result = true;
             } else return false;
